@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login successful</title>
+</head>
+<body id="main">
+</body>
+<script>
+  document.body.onload = function() {
+    window.opener.postMessage(
+      { auth: { token: 'myToken' } },
+      window.opener.location
+    );
+
+    /*
+    window.opener.postMessage(
+      { error: 'Login failed' },
+      window.opener.location
+    );
+    */
+  };
+</script>
+</html>
